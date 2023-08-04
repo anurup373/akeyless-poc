@@ -1,13 +1,15 @@
 name: ImageBuilder
 # Run this workflow every time a new commit pushed to your repository
-on: push
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Import Secrets
-        uses: hashicorp/vault-action@v2.2.0
+        uses: hashicorp/vault-action@v2.7.3
         env:
             ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
