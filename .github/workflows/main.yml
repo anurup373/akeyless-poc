@@ -11,7 +11,8 @@ jobs:
         env:
             ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
-          url: https://hvp.akeyless.io
+          # url: https://hvp.akeyless.io
+          url: https://akeyless-gw:8200
           tlsSkipVerify: true
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
